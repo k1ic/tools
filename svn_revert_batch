@@ -1,0 +1,1 @@
+svn st | awk '{print $2}' | xargs svn revert 
