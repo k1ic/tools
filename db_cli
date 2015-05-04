@@ -1,0 +1,2 @@
+mysql_comm
+mysql -h db_host_name(ip) -P db_host_port -u db_user -pdb_user's_passwd
