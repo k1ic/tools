@@ -4,3 +4,7 @@ mysql -h db_host_name(ip) -P db_host_port -u db_user -pdb_user's_passwd
 show databases;
 
 show tables;
+
+drop database test; #删除数据库名为test的数据库
+
+truncate table tb_test; #清空tb_test中的所有数据
