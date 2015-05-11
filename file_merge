@@ -1,0 +1,30 @@
+#按行追加合并
+##########################################
+#cat 1.csv
+#th1,th2
+#111111111,aaaaaaaaa
+#cat 2.csv
+#th1,th2
+#222222222,bbbbbbbbb
+#cat *.csv | awk '{ if (NR == 1) { print $0; } else if (NR > 1 && $0 != "th1,th2") { print $0; } }' > 3.csv
+#cat 3.csv
+#th1,th2
+#111111111,aaaaaaaaa
+#222222222,bbbbbbbbb
+##########################################
+cat *.csv | awk '{ if (NR == 1) { print $0; } else if (NR > 1 && $0 != "table header") { print $0; } }' > gather.csv
+
+#按列追加合并
+##########################################
+#cat 1.csv
+#th1,th2
+#111111111,aaaaaaaaa
+#cat 2.csv
+#th1,th2
+#222222222,bbbbbbbbb
+#paste -d ',' *.csv > 3.csv
+#cat 3.csv
+#th1,th2,th1,th2
+#111111111,aaaaaaaaa,222222222,bbbbbbbbb
+##########################################
+paste -d ','  *.csv > gather_vertical.csv
